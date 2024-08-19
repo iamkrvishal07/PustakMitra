@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <title>PustakMitra</title>
+    <style>
+        .card-img-top {
+            object-fit: cover; /* Ensure the image covers the space without distortion */
+            height: 250px; /* Fixed height for consistency */
+            width: 200px;  /* Fixed width for consistency */
+            
+        }
+        .card-body {
+            display: flex;
+            align-items: center; /* Center align content vertically */
+            
+        }
+        .card-body img {
+            margin-right: 15px; /* Space between image and text */
+        }
+        .btn {
+            margin-top: 10px; /* Space between title and button */
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <%- include('./partials/nav') %>
+    <div class="container mt-5">
+        <div class="row">
+            <% book.forEach(item => { %>
+                <div class="col-sm-4 mb-4"> <!-- Added margin bottom for spacing between rows -->
+                    <div class="card">
+                        <div class="card-body d-flex">
+                            <img src="<%=item.image %>" 
+                                class="card-img-top" 
+                                alt="<%= item.title %>"> <!-- Use title as alt text for better accessibility -->
+                            <div>
+                                <h5 class="card-title" style="font-weight: bold;"><%=item.title %></h5>
+                                <a href="/book/<%=item._id %>" class="btn btn-primary my-2">Read More</a>
+                                <div class="d-flex align-items-center">
+                                    <form action="/book/<%= item._id %>?_method=DELETE" method="POST" style="margin-right: 10px;">
+                                        <button type="submit" style="border: none; background: none; padding: 0;">
+                                            <img src="/delete.png" width="40px" height="40px" alt="Delete" />
+                                        </button>
+                                    </form>                                  
+                                    <a href="/edit/<%= item._id %>">
+                                        <img src="/edit.png" width="40px" height="40px" alt="Edit" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('./partials/script.js') %>
+</body>
+</html>

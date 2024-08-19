@@ -1,0 +1,24 @@
+<div class="mb-3">
+    <label for="file" class="form-label">Cover Image</label>
+    <input type="file" class="form-control" name="image">
+</div>
+
+<div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" placeholder="Enter the book title" value="<%= book.title %>" required>
+</div>
+
+<div class="mb-3">
+    <label for="author" class="form-label">Author</label>
+    <input type="text" class="form-control" name="author" placeholder="Enter the book author" value="<%= book.author %>" required>
+</div>
+
+<div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" name="price" placeholder="Enter the book price" value="<%= book.price %>" required>
+</div>
+
+<div class="mb-3">
+    <label for="description" class="form-label">Description about the book</label>
+    <textarea class="form-control" name="description" rows="3" required><%= book.description %></textarea>
+</div>

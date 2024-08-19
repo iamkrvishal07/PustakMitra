@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <title>BookStore</title>
+</head>
+<body class="bg-light text-dark">
+    <%- include('./partials/nav') %>
+    <div class="container mt-4 w-50">
+        <% if(locals.error) {%>
+            <div class="alert alert-danger"><%=error %></div>
+            <% } %>
+        <form action="/book" enctype="multipart/form-data" method="POST" >
+            <%- include('./partials/forminput.ejs') %>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/script.js') %>
+    
+</body>
+</html>
