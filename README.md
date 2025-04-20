@@ -1,7 +1,7 @@
 # PustakMitra
 
 ## Overview
-PustakMitra is currently under development. The initial functionality for adding and editing data has been implemented.
+PustakMitra currently offers essential features like adding, editing, and deleting data — more coming soon!
 
 ### Homepage
 ![Screenshot (1409)](https://github.com/user-attachments/assets/c0ed8740-8b31-4f19-8774-b0d3e07f98c6)
